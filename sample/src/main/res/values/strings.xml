@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android-RatioLayout</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
+</resources>
