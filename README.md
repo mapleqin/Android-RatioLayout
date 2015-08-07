@@ -9,8 +9,8 @@ For more information please see <a href='http://devsoulwolf.github.io/ratioLayou
 ![Sample](https://github.com/devsoulwolf/Android-RatioLayout/blob/master/Screenshots/sample2.jpg)
 
 
-## PictureChooseLib with Java code
-```java
+## Android-RatioLayout with xml code
+```xml
 		<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
 			xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
@@ -51,9 +51,12 @@ For more information please see <a href='http://devsoulwolf.github.io/ratioLayou
             android:layout_marginTop="8dp"
             soulwolf:heightRatio="10.0"
             android:layout_height="wrap_content"/>
-        
-		RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
-		ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
+		
+```
+## Android-RatioLayout with java code
+```java
+	RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
+	ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
 ```
 
 ## Attr params  info
