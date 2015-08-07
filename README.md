@@ -5,8 +5,8 @@ For more information please see <a href='http://devsoulwolf.github.io/ratioLayou
 
 ## Screenshots
 
-![Sample](https://github.com/devsoulwolf/Android-RatioLayout/blob/master/Screenshots/sample1.jpg)
-![Sample](https://github.com/devsoulwolf/Android-RatioLayout/blob/master/Screenshots/sample2.jpg)
+![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB2lKdCepXXXXcUXXXXXXXXXXXX_!!1025192026.jpg_620x10000.jpg)
+![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB29CJsepXXXXaUXpXXXXXXXXXX_!!1025192026.jpg_620x10000.jpg)
 
 
 ## Android-RatioLayout with xml code
@@ -61,30 +61,46 @@ For more information please see <a href='http://devsoulwolf.github.io/ratioLayou
 
 ## Attr params  info
 
-|| *attrName* || *Explanation* ||
-|| datumRatio || This parameter indicates the ratio is calculated based on Width Or Height! ||
-|| widthRatio || This parameter indicates the proportion of the size Width ||
-|| heightRatio || This parameter indicates the proportion of the size Height ||
+<table>
+	<tbody>
+		<tr>
+			<td><em>attrName</em></td>
+			<td><em>Explanation</em></td>
+		</tr>
+		<tr>
+			<td>datumRatio</td>
+			<td>This parameter indicates the ratio is calculated based on Width Or Height! </td>
+		</tr>
+		<tr>
+			<td>widthRatio</td>
+			<td>This parameter indicates the proportion of the size Width</td>
+		</tr>
+		<tr>
+			<td>heightRatio</td>
+			<td>This parameter indicates the proportion of the size Height</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Implementing View!
 
  <ul>
-   	<li><a href='javascript:void(0)'>RatioAbsoluteLayout</a></li>
-	<li><a href='javascript:void(0)'>RatioButton</a></li>
-	<li><a href='javascript:void(0)'>RatioCheckBox</a></li>
-	<li><a href='javascript:void(0)'>RatioCheckedTextView</a></li>
-	<li><a href='javascript:void(0)'>RatioEditText</a></li>
-	<li><a href='javascript:void(0)'>RatioFrameLayout</a></li>
-	<li><a href='javascript:void(0)'>RatioGridLayout</a></li>
-	<li><a href='javascript:void(0)'>RatioImageButton</a></li>
-	<li><a href='javascript:void(0)'>RatioImageView</a></li>
-	<li><a href='javascript:void(0)'>RatioProgressBar</a></li>
-	<li><a href='javascript:void(0)'>RatioRadioButton</a></li>
-	<li><a href='javascript:void(0)'>RatioRadioGroup</a></li>
-	<li><a href='javascript:void(0)'>RatioRelativeLayout</a></li>
-	<li><a href='javascript:void(0)'>RatioSpace</a></li>
-	<li><a href='javascript:void(0)'>RatioTableLayout</a></li>
-	<li><a href='javascript:void(0)'>RatioTextView</a></li>
+   	<li><a href='javascript:'>RatioAbsoluteLayout</a></li>
+	<li><a href='javascript:'>RatioButton</a></li>
+	<li><a href='javascript:'>RatioCheckBox</a></li>
+	<li><a href='javascript:'>RatioCheckedTextView</a></li>
+	<li><a href='javascript:'>RatioEditText</a></li>
+	<li><a href='javascript:'>RatioFrameLayout</a></li>
+	<li><a href='javascript:'>RatioGridLayout</a></li>
+	<li><a href='javascript:'>RatioImageButton</a></li>
+	<li><a href='javascript:'>RatioImageView</a></li>
+	<li><a href='javascript:'>RatioProgressBar</a></li>
+	<li><a href='javascript:'>RatioRadioButton</a></li>
+	<li><a href='javascript:'>RatioRadioGroup</a></li>
+	<li><a href='javascript:'>RatioRelativeLayout</a></li>
+	<li><a href='javascript:'>RatioSpace</a></li>
+	<li><a href='javascript:'>RatioTableLayout</a></li>
+	<li><a href='javascript:'>RatioTextView</a></li>
  </ul>
 
 ## Custom
