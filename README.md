@@ -5,8 +5,8 @@ For more information please see <a href='http://devsoulwolf.github.io/Android-Ra
 
 ## Screenshots
 
-![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB2lKdCepXXXXcUXXXXXXXXXXXX_!!1025192026.jpg_620x10000.jpg)
-![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB29CJsepXXXXaUXpXXXXXXXXXX_!!1025192026.jpg_620x10000.jpg)
+![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB2lKdCepXXXXcUXXXXXXXXXXXX_!!1025192026.jpg_310x310.jpg)
+![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB29CJsepXXXXaUXpXXXXXXXXXX_!!1025192026.jpg_310x310.jpg)
 
 
 ## Android-RatioLayout with xml code
