@@ -86,6 +86,7 @@ For more information please see <a href='http://devsoulwolf.github.io/Android-Ra
 
  <ul>
    	<li><a href='javascript:'>RatioAbsoluteLayout</a></li>
+   	<li><a href='javascript:'>RatioLinearLayout</a></li>
 	<li><a href='javascript:'>RatioButton</a></li>
 	<li><a href='javascript:'>RatioCheckBox</a></li>
 	<li><a href='javascript:'>RatioCheckedTextView</a></li>
