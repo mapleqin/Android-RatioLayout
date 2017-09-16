@@ -219,11 +219,11 @@ public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegat
 
 ## Maven
 	<dependency>
-  	    <groupId>net.soulwolf.widget</groupId>
-		<url>https://dl.bintray.com/soulwolf/maven</url>
-  	    <artifactId>ratiolayout</artifactId>
-  	    <version>2.0.0</version>
-	</dependency>
+      <groupId>net.soulwolf.widget</groupId>
+      <artifactId>ratiolayout</artifactId>
+      <version>2.0.0</version>
+      <type>pom</type>
+    </dependency>
 ## Gradle
 	allprojects {
        repositories {
