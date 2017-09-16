@@ -1,7 +1,6 @@
-/**
+/*
  * <pre>
- * Copyright 2015 Soulwolf Ching
- * Copyright 2015 The Android Open Source Project for xiaodaow3.0-branche
+ * Copyright 2015 The Android Open Source Project for Android-RatioLayout
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,85 +20,146 @@ package net.soulwolf.widget.ratiolayout;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 /**
- * author: Soulwolf Created on 2015/7/26 12:34.
- * email : Ching.Soulwolf@gmail.com
+ * author: Amphiaraus
+ * since : 2017/9/13 上午10:39.
  */
 public final class RatioLayoutDelegate<TARGET extends View & RatioMeasureDelegate> {
 
     public static <TARGET extends View & RatioMeasureDelegate> RatioLayoutDelegate obtain(TARGET target, AttributeSet attrs) {
-        return obtain(target,attrs,0);
+        return obtain(target, attrs, 0);
     }
 
     public static <TARGET extends View & RatioMeasureDelegate> RatioLayoutDelegate obtain(TARGET target, AttributeSet attrs, int defStyleAttr) {
-        return obtain(target,attrs,0,0);
+        return obtain(target, attrs, 0, 0);
     }
 
     @SuppressWarnings("unchecked")
     public static <TARGET extends View & RatioMeasureDelegate> RatioLayoutDelegate obtain(TARGET target, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        return new RatioLayoutDelegate(target,attrs,defStyleAttr,defStyleRes);
+        return new RatioLayoutDelegate(target, attrs, defStyleAttr, defStyleRes);
     }
 
-    private final TARGET mRatioMeasureDelegate;
+    private final TARGET mRatioTarget;
 
     private RatioDatumMode mRatioDatumMode;
-
-    private float mDatumWidth = 0.0f;
-
-    private float mDatumHeight = 0.0f;
+    private float mDatumWidth;
+    private float mDatumHeight;
+    private float mAspectRatio;
+    private boolean mIsSquare;
 
     private int mWidthMeasureSpec, mHeightMeasureSpec;
 
-    private RatioLayoutDelegate(TARGET target, AttributeSet attrs, int defStyleAttr, int defStyleRes){
-        this.mRatioMeasureDelegate = target;
-        TypedArray typedArray = mRatioMeasureDelegate.getContext().obtainStyledAttributes(attrs, R.styleable.ViewSizeCalculate, defStyleAttr, defStyleRes);
-        if(typedArray != null){
-            int datum = typedArray.getInt(R.styleable.ViewSizeCalculate_datumRatio, 0);
-            if(datum == 1){
-                mRatioDatumMode = RatioDatumMode.DATUM_WIDTH;
-            }else if(datum == 2){
-                mRatioDatumMode = RatioDatumMode.DATUM_HEIGHT;
+    private RatioLayoutDelegate(TARGET target, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        mRatioTarget = target;
+        TypedArray a = mRatioTarget.getContext().obtainStyledAttributes(attrs, R.styleable.ViewSizeCalculate, defStyleAttr, defStyleRes);
+        mRatioDatumMode = RatioDatumMode.valueOf(a.getInt(R.styleable.ViewSizeCalculate_datumRatio, 0));
+        mDatumWidth = a.getFloat(R.styleable.ViewSizeCalculate_widthRatio, mDatumWidth);
+        mDatumHeight = a.getFloat(R.styleable.ViewSizeCalculate_heightRatio, mDatumHeight);
+        mIsSquare = a.getBoolean(R.styleable.ViewSizeCalculate_isSquare, false);
+        mAspectRatio = a.getFloat(R.styleable.ViewSizeCalculate_aspectRatio, mAspectRatio);
+        a.recycle();
+    }
+
+    private RatioDatumMode shouldRatioDatumMode(ViewGroup.LayoutParams params) {
+        if (mRatioDatumMode == null || mRatioDatumMode == RatioDatumMode.DATUM_AUTO) {
+            if (params.width > 0 || shouldLinearParamsWidth(params)
+                    || params.width == ViewGroup.LayoutParams.MATCH_PARENT) {
+                return RatioDatumMode.DATUM_WIDTH;
             }
-            mDatumWidth = typedArray.getFloat(R.styleable.ViewSizeCalculate_widthRatio, mDatumWidth);
-            mDatumHeight = typedArray.getFloat(R.styleable.ViewSizeCalculate_heightRatio, mDatumHeight);
-            typedArray.recycle();
+            if (params.height > 0 || shouldLinearParamsHeight(params)
+                    || params.height == ViewGroup.LayoutParams.MATCH_PARENT) {
+                return RatioDatumMode.DATUM_HEIGHT;
+            }
+            return null;
+        }
+        return mRatioDatumMode;
+    }
+
+    private boolean shouldLinearParamsWidth(ViewGroup.LayoutParams params) {
+        if (!(params instanceof LinearLayout.LayoutParams)) {
+            return false;
+        }
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) params;
+        return layoutParams.width == 0 && layoutParams.weight > 0;
+    }
+
+    private boolean shouldLinearParamsHeight(ViewGroup.LayoutParams params) {
+        if (!(params instanceof LinearLayout.LayoutParams)) {
+            return false;
+        }
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) params;
+        return layoutParams.height == 0 && layoutParams.weight > 0;
+    }
+
+    public final void update(int widthMeasureSpec, int heightMeasureSpec) {
+        mWidthMeasureSpec = widthMeasureSpec;
+        mHeightMeasureSpec = heightMeasureSpec;
+
+        final RatioDatumMode mode = shouldRatioDatumMode(mRatioTarget.getLayoutParams());
+        final int wp = mRatioTarget.getPaddingLeft() + mRatioTarget.getPaddingRight();
+        final int hp = mRatioTarget.getPaddingTop() + mRatioTarget.getPaddingBottom();
+
+        if (mode == RatioDatumMode.DATUM_WIDTH) {
+            final int width = View.MeasureSpec.getSize(widthMeasureSpec);
+            if (mIsSquare) {
+                final int height = resolveSize(width - wp + hp, heightMeasureSpec);
+                mHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
+            } else if (mAspectRatio > 0) {
+                final int height = resolveSize(Math.round((width - wp) / mAspectRatio + hp), heightMeasureSpec);
+                mHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
+            } else if (mDatumWidth > 0 && mDatumHeight > 0) {
+                final int height = resolveSize(Math.round((width - wp) / mDatumWidth * mDatumHeight + hp), heightMeasureSpec);
+                mHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
+            }
+        } else if (mode == RatioDatumMode.DATUM_HEIGHT) {
+            final int height = View.MeasureSpec.getSize(heightMeasureSpec);
+            if (mIsSquare) {
+                final int width = resolveSize(height - hp + wp, widthMeasureSpec);
+                mWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
+            } else if (mAspectRatio > 0) {
+                final int width = resolveSize(Math.round((height - hp) / mAspectRatio + wp), widthMeasureSpec);
+                mWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
+            } else if (mDatumWidth > 0 && mDatumHeight > 0) {
+                final int width = resolveSize(Math.round((height - hp) / mDatumHeight * mDatumWidth + wp), widthMeasureSpec);
+                mWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
+            }
         }
     }
 
-    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        this.mWidthMeasureSpec = widthMeasureSpec;
-        this.mHeightMeasureSpec = heightMeasureSpec;
-        if(mRatioDatumMode != null && mDatumWidth != 0 && mDatumHeight != 0){
-            mRatioMeasureDelegate.setDelegateMeasuredDimension(View.getDefaultSize(0, mWidthMeasureSpec),
-                    View.getDefaultSize(0, mHeightMeasureSpec));
-            int measuredWidth = mRatioMeasureDelegate.getMeasuredWidth();
-            int measuredHeight = mRatioMeasureDelegate.getMeasuredHeight();
-            if(mRatioDatumMode == RatioDatumMode.DATUM_WIDTH){
-                measuredHeight = (int) (measuredWidth / mDatumWidth * mDatumHeight);
-            }else {
-                measuredWidth = (int) (measuredHeight / mDatumHeight * mDatumWidth);
-            }
-            mWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, View.MeasureSpec.EXACTLY);
-            mHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredHeight, View.MeasureSpec.EXACTLY);
-        }
-    }
-
-    public int getWidthMeasureSpec() {
+    public final int getWidthMeasureSpec() {
         return mWidthMeasureSpec;
     }
 
-    public int getHeightMeasureSpec() {
+    public final int getHeightMeasureSpec() {
         return mHeightMeasureSpec;
     }
 
-    public void setRatio(RatioDatumMode mode,float datumWidth,float datumHeight){
-        if(mode == null){
-            throw new IllegalArgumentException("RatioDatumMode == null");
-        }
-        this.mRatioDatumMode = mode;
-        this.mDatumWidth = datumWidth;
-        this.mDatumHeight = datumHeight;
-        this.mRatioMeasureDelegate.requestLayout();
+    private void requestLayout() {
+        mRatioTarget.requestLayout();
+    }
+
+    private int resolveSize(int size, int measureSpec) {
+        /*return View.resolveSize(size,measureSpec);*/
+        return size;
+    }
+
+    public final void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
+        mRatioDatumMode = mode;
+        mDatumWidth = datumWidth;
+        mDatumHeight = datumHeight;
+        requestLayout();
+    }
+
+    public final void setSquare(boolean square) {
+        mIsSquare = square;
+        requestLayout();
+    }
+
+    public final void setAspectRatio(float aspectRatio) {
+        mAspectRatio = aspectRatio;
+        requestLayout();
     }
 }

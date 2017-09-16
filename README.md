@@ -1,62 +1,103 @@
-# Android-RatioLayout [ ![Download](https://api.bintray.com/packages/soulwolf/maven/ratiolayout/images/download.svg) ](https://bintray.com/soulwolf/maven/ratiolayout/_latestVersion)
+# Android-RatioLayout [![Build Status](https://travis-ci.org/amphiaraus/Android-RatioLayout.svg?branch=2.x)](https://travis-ci.org/amphiaraus/Android-RatioLayout) [ ![Download](https://api.bintray.com/packages/soulwolf/maven/ratiolayout/images/download.svg) ](https://bintray.com/soulwolf/maven/ratiolayout/_latestVersion)
 This is a specified proportion to the size of the Layout or View support library, with which you can easily set a fixed ratio of the size of the Layout or View, internal adaptive size calculation, completely abandon the code to calculate the size! If you have any questions in the course or suggestions, please send an e-mail to the following e-mail, thank you!
 
 For more information please see <a href='http://amphiaraus.org/Android-RatioLayout'>the website</a>
 
 ## Screenshots
 
-![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB2lKdCepXXXXcUXXXXXXXXXXXX_!!1025192026.jpg_310x310.jpg)
-![Sample](https://img.alicdn.com/imgextra/i1/1025192026/TB29CJsepXXXXaUXpXXXXXXXXXX_!!1025192026.jpg_310x310.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-1.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-2.jpg)
 
 
 ## Android-RatioLayout with xml code
 ```xml
-		<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
-			xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            soulwolf:datumRatio="datumWidth"
-            soulwolf:widthRatio="16.0"
-            soulwolf:heightRatio="9.0"
-            android:layout_height="wrap_content">
+<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:datumRatio="datumWidth"
+    app:widthRatio="16.0"
+    app:heightRatio="9.0"
+    android:layout_height="wrap_content">
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioImageView
-                android:id="@+id/image2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="16.0"
-                soulwolf:heightRatio="7.0"
-                android:scaleType="centerCrop"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:datumRatio="datumWidth"
+        app:widthRatio="16.0"
+        app:heightRatio="7.0"
+        android:scaleType="centerCrop"/>
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="16.0"
-                android:background="@color/sample_text"
-                soulwolf:heightRatio="7.0"
-                android:text="RatioImageView/RatioTextView:16*7"
-                android:textColor="@android:color/white"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:datumRatio="datumWidth"
+        app:widthRatio="16.0"
+        android:background="@color/sample_text"
+        app:heightRatio="7.0"
+        android:text="RatioImageView/RatioTextView:16*7"
+        android:textColor="@android:color/white"/>
 
-        </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
+</net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
 
-		<net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
-			xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            soulwolf:datumRatio="datumWidth"
-            soulwolf:widthRatio="15.0"
-            android:layout_marginTop="8dp"
-            soulwolf:heightRatio="10.0"
-            android:layout_height="wrap_content"/>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal">
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/sample_primary"
+        android:gravity="center"
+        android:text="Square"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:isSquare="true"/>
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioView
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        app:heightRatio="1"
+        app:widthRatio="1"/>
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/sample_primary"
+        android:gravity="center"
+        android:text="AspectRatio:1.0"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:aspectRatio="1"/>
+
+</LinearLayout>
+
+<net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:datumRatio="datumWidth"
+    app:widthRatio="15.0"
+    app:layout_marginTop="8dp"
+    app:heightRatio="10.0"
+    app:layout_height="wrap_content"/>
 		
 ```
 ## Android-RatioLayout with java code
 ```java
-	RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
-	ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
+RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
+ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
+ratioFrameLayout.setSquare(square);
+ratioFrameLayout.setAspectRatio(aspectRatio);
 ```
 
 ## Attr params  info
@@ -69,7 +110,7 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 		</tr>
 		<tr>
 			<td>datumRatio</td>
-			<td>This parameter indicates the ratio is calculated based on Width Or Height! </td>
+			<td>This parameter indicates the ratio is calculated based on Width Or Height! Default auto </td>
 		</tr>
 		<tr>
 			<td>widthRatio</td>
@@ -79,6 +120,14 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 			<td>heightRatio</td>
 			<td>This parameter indicates the proportion of the size Height</td>
 		</tr>
+		<tr>
+            <td>isSquare</td>
+            <td>This parameter indicates the proportion of the square</td>
+        </tr>
+        <tr>
+            <td>aspectRatio</td>
+            <td>This parameter indicates the proportion of the (width / height)</td>
+        </tr>
 	</tbody>
 </table>
 
@@ -102,13 +151,18 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 	<li><a href='javascript:'>RatioSpace</a></li>
 	<li><a href='javascript:'>RatioTableLayout</a></li>
 	<li><a href='javascript:'>RatioTextView</a></li>
+	<li><a href='javascript:'>RatioGridView</a></li>
+	<li><a href='javascript:'>RatioListView</a></li>
+	<li><a href='javascript:'>RatioRecyclerView</a></li>
+	<li><a href='javascript:'>RatioCardView</a></li>
  </ul>
 
 ## Custom
 ```java
-	public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegate {
+public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegate {
 
     private RatioLayoutDelegate mRatioLayoutDelegate;
+
 
     public RatioFrameLayout(Context context) {
         super(context);
@@ -132,8 +186,8 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if(mRatioLayoutDelegate != null){
-            mRatioLayoutDelegate.onMeasure(widthMeasureSpec,heightMeasureSpec);
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.update(widthMeasureSpec, heightMeasureSpec);
             widthMeasureSpec = mRatioLayoutDelegate.getWidthMeasureSpec();
             heightMeasureSpec = mRatioLayoutDelegate.getHeightMeasureSpec();
         }
@@ -141,17 +195,25 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
     }
 
     @Override
-    public void setDelegateMeasuredDimension(int measuredWidth, int measuredHeight) {
-        setMeasuredDimension(measuredWidth, measuredHeight);
-    }
-
-    @Override
     public void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
-        if(mRatioLayoutDelegate != null){
-            mRatioLayoutDelegate.setRatio(mode,datumWidth,datumHeight);
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setRatio(mode, datumWidth, datumHeight);
         }
     }
 
+    @Override
+    public void setSquare(boolean square) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setSquare(square);
+        }
+    }
+
+    @Override
+    public void setAspectRatio(float aspectRatio) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setAspectRatio(aspectRatio);
+        }
+    }
 }
 ```
 
@@ -160,7 +222,7 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
   	    <groupId>net.soulwolf.widget</groupId>
 		<url>https://dl.bintray.com/soulwolf/maven</url>
   	    <artifactId>ratiolayout</artifactId>
-  	    <version>1.0.0</version>
+  	    <version>2.0.0</version>
 	</dependency>
 ## Gradle
 	allprojects {
@@ -169,14 +231,15 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
        }
 	}
 	
-	compile 'net.soulwolf.widget:ratiolayout:1.0.0'
+	compile 'net.soulwolf.widget:ratiolayout:2.0.0'
 
 ## Developed by
- Ching Soulwolf - <a href='javascript:'>Ching.Soulwolf@gmail.com</a>
+  Amphiaraus - <a href='javascript:'>amphiarause@gmail.com</a>
 
+## Author other library 
+  <a href='https://github.com/amphiaraus/RoundedLayout'>RoundedLayout</a> - A Layout that handles the filery of a View
 
 ## License
-	Copyright 2015 Soulwolf Ching
 	Copyright 2015 The Android Open Source Project for Android-RatioLayout
 	
 	Licensed under the Apache License, Version 2.0 (the "License");

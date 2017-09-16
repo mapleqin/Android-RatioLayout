@@ -1,7 +1,6 @@
-/**
+/*
  * <pre>
- * Copyright 2015 Soulwolf Ching
- * Copyright 2015 The Android Open Source Project for xiaodaow3.0-branche
+ * Copyright 2015 The Android Open Source Project for Android-RatioLayout
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,17 +21,15 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.view.ViewGroup;
 import android.widget.AbsoluteLayout;
-import android.widget.LinearLayout;
 
 import net.soulwolf.widget.ratiolayout.RatioDatumMode;
 import net.soulwolf.widget.ratiolayout.RatioLayoutDelegate;
 import net.soulwolf.widget.ratiolayout.RatioMeasureDelegate;
 
 /**
- * author: Soulwolf Created on 2015/7/26 13:02.
- * email : Ching.Soulwolf@gmail.com
+ * author: Amphiaraus
+ * since : 2017/9/13 上午10:39.
  */
 public class RatioAbsoluteLayout extends AbsoluteLayout implements RatioMeasureDelegate {
 
@@ -60,8 +57,8 @@ public class RatioAbsoluteLayout extends AbsoluteLayout implements RatioMeasureD
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if(mRatioLayoutDelegate != null){
-            mRatioLayoutDelegate.onMeasure(widthMeasureSpec,heightMeasureSpec);
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.update(widthMeasureSpec, heightMeasureSpec);
             widthMeasureSpec = mRatioLayoutDelegate.getWidthMeasureSpec();
             heightMeasureSpec = mRatioLayoutDelegate.getHeightMeasureSpec();
         }
@@ -69,14 +66,23 @@ public class RatioAbsoluteLayout extends AbsoluteLayout implements RatioMeasureD
     }
 
     @Override
-    public void setDelegateMeasuredDimension(int measuredWidth, int measuredHeight) {
-        setMeasuredDimension(measuredWidth, measuredHeight);
+    public void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setRatio(mode, datumWidth, datumHeight);
+        }
     }
 
     @Override
-    public void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
-        if(mRatioLayoutDelegate != null){
-            mRatioLayoutDelegate.setRatio(mode,datumWidth,datumHeight);
+    public void setSquare(boolean square) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setSquare(square);
+        }
+    }
+
+    @Override
+    public void setAspectRatio(float aspectRatio) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setAspectRatio(aspectRatio);
         }
     }
 }

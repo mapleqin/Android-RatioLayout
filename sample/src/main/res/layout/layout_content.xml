@@ -1,146 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="15dp">
 
         <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
             android:layout_width="match_parent"
-            soulwolf:datumRatio="datumWidth"
-            soulwolf:widthRatio="16.0"
-            soulwolf:heightRatio="9.0"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+            android:layout_height="wrap_content"
+            android:background="@color/sample_primary"
+            app:datumRatio="datumWidth"
+            app:heightRatio="9.0"
+            app:widthRatio="16.0">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:background="@color/sample_text"
                 android:text="RatioFrameLayout:16*9"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
             <net.soulwolf.widget.ratiolayout.widget.RatioImageView
                 android:id="@+id/image2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="16.0"
-                soulwolf:heightRatio="7.0"
-                android:scaleType="centerCrop"/>
+                android:background="@color/sample_primary"
+                android:scaleType="centerCrop"
+                app:datumRatio="datumWidth"
+                app:heightRatio="7.0"
+                app:widthRatio="16.0"/>
 
             <net.soulwolf.widget.ratiolayout.widget.RatioTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:background="@color/sample_primary"
                 android:gravity="center"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="16.0"
-                android:background="@color/sample_text"
-                soulwolf:heightRatio="7.0"
                 android:text="RatioImageView/RatioTextView:16*7"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:datumRatio="datumWidth"
+                app:heightRatio="7.0"
+                app:widthRatio="16.0"/>
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioImageView
-                android:id="@+id/image5"
+            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="10.0"
-                soulwolf:heightRatio="9.0"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:background="@color/sample_primary"
+                android:gravity="center"
+                android:text="Square"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:isSquare="true"/>
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioImageView
-                android:id="@+id/image6"
+            <net.soulwolf.widget.ratiolayout.widget.RatioView
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                app:heightRatio="1"
+                app:widthRatio="1"/>
+
+            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                soulwolf:datumRatio="datumWidth"
-                soulwolf:widthRatio="10.0"
-                android:layout_marginLeft="15dp"
-                soulwolf:heightRatio="9.0"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:background="@color/sample_primary"
+                android:gravity="center"
+                android:text="AspectRatio:1.0"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:aspectRatio="1"/>
 
         </LinearLayout>
 
         <net.soulwolf.widget.ratiolayout.widget.RatioLinearLayout
             android:layout_width="match_parent"
-            soulwolf:datumRatio="datumWidth"
-            soulwolf:widthRatio="15.0"
-            soulwolf:heightRatio="7.0"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+            app:datumRatio="datumWidth"
+            app:heightRatio="7.0"
+            app:widthRatio="15.0">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:background="@color/sample_text"
+                android:background="@color/sample_primary"
                 android:gravity="center"
                 android:text="RatioLinearLayout:15*7"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
         </net.soulwolf.widget.ratiolayout.widget.RatioLinearLayout>
 
         <net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
             android:layout_width="match_parent"
-            soulwolf:datumRatio="datumWidth"
-            soulwolf:widthRatio="15.0"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            soulwolf:heightRatio="10.0"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+            app:datumRatio="datumWidth"
+            app:heightRatio="10.0"
+            app:widthRatio="15.0">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:background="@color/sample_primary"
                 android:gravity="center"
-                android:background="@color/sample_text"
                 android:text="RatioRelativeLayout:15*10"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
         </net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout>
     </LinearLayout>
