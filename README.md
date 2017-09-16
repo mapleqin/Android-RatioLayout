@@ -1,12 +1,12 @@
-# Android-RatioLayout [ ![Download](https://api.bintray.com/packages/soulwolf/maven/ratiolayout/images/download.svg) ](https://bintray.com/soulwolf/maven/ratiolayout/_latestVersion)
+# Android-RatioLayout [![Build Status](https://travis-ci.org/amphiaraus/Android-RatioLayout.svg?branch=2.x)](https://travis-ci.org/amphiaraus/Android-RatioLayout) [ ![Download](https://api.bintray.com/packages/soulwolf/maven/ratiolayout/images/download.svg) ](https://bintray.com/soulwolf/maven/ratiolayout/_latestVersion)
 This is a specified proportion to the size of the Layout or View support library, with which you can easily set a fixed ratio of the size of the Layout or View, internal adaptive size calculation, completely abandon the code to calculate the size! If you have any questions in the course or suggestions, please send an e-mail to the following e-mail, thank you!
 
 For more information please see <a href='http://amphiaraus.org/Android-RatioLayout'>the website</a>
 
 ## Screenshots
 
-![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample1.jpg)
-![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample2.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-1.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-2.jpg)
 
 
 ## Android-RatioLayout with xml code
