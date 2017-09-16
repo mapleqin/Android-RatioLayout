@@ -5,8 +5,8 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 
 ## Screenshots
 
-![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-1.jpg)
-![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/2.x/Screenshots/sample-2.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/master/Screenshots/sample-1.jpg)
+![Sample](https://raw.githubusercontent.com/amphiaraus/Android-RatioLayout/master/Screenshots/sample-2.jpg)
 
 
 ## Android-RatioLayout with xml code
