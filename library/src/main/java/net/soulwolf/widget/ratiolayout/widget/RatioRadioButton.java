@@ -1,7 +1,6 @@
-/**
+/*
  * <pre>
- * Copyright 2015 Soulwolf Ching
- * Copyright 2015 The Android Open Source Project for xiaodaow3.0-branche
+ * Copyright 2015 The Android Open Source Project for Android-RatioLayout
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +28,8 @@ import net.soulwolf.widget.ratiolayout.RatioLayoutDelegate;
 import net.soulwolf.widget.ratiolayout.RatioMeasureDelegate;
 
 /**
- * author: Soulwolf Created on 2015/7/26 13:02.
- * email : Ching.Soulwolf@gmail.com
+ * author: Amphiaraus
+ * since : 2017/9/13 上午10:39.
  */
 public class RatioRadioButton extends ProgressBar implements RatioMeasureDelegate {
 
@@ -59,7 +58,7 @@ public class RatioRadioButton extends ProgressBar implements RatioMeasureDelegat
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if(mRatioLayoutDelegate != null){
-            mRatioLayoutDelegate.onMeasure(widthMeasureSpec,heightMeasureSpec);
+            mRatioLayoutDelegate.update(widthMeasureSpec,heightMeasureSpec);
             widthMeasureSpec = mRatioLayoutDelegate.getWidthMeasureSpec();
             heightMeasureSpec = mRatioLayoutDelegate.getHeightMeasureSpec();
         }
@@ -67,8 +66,17 @@ public class RatioRadioButton extends ProgressBar implements RatioMeasureDelegat
     }
 
     @Override
-    public void setDelegateMeasuredDimension(int measuredWidth, int measuredHeight) {
-        setMeasuredDimension(measuredWidth, measuredHeight);
+    public void setSquare(boolean square) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setSquare(square);
+        }
+    }
+
+    @Override
+    public void setAspectRatio(float aspectRatio) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setAspectRatio(aspectRatio);
+        }
     }
 
     @Override

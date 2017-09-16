@@ -1,7 +1,6 @@
-/**
+/*
  * <pre>
- * Copyright 2015 Soulwolf Ching
- * Copyright 2015 The Android Open Source Project for xiaodaow3.0-branche
+ * Copyright 2015 The Android Open Source Project for Android-RatioLayout
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +18,27 @@
 package net.soulwolf.widget.ratiolayout;
 
 /**
- * author: Soulwolf Created on 2015/7/26 12:32.
- * email : Ching.Soulwolf@gmail.com
+ * author: Amphiaraus
+ * since : 2017/9/13 上午10:39.
  */
 public enum RatioDatumMode {
-    DATUM_WIDTH,
-    DATUM_HEIGHT
+    DATUM_AUTO(0),
+    DATUM_WIDTH(1),
+    DATUM_HEIGHT(2);
+
+    final int mode;
+
+    RatioDatumMode(int mode) {
+        this.mode = mode;
+    }
+
+    public static RatioDatumMode valueOf(int mode) {
+        if (mode == DATUM_WIDTH.mode) {
+            return DATUM_WIDTH;
+        }
+        if (mode == DATUM_HEIGHT.mode) {
+            return DATUM_HEIGHT;
+        }
+        return DATUM_AUTO;
+    }
 }
