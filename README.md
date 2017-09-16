@@ -11,93 +11,93 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 
 ## Android-RatioLayout with xml code
 ```xml
-		<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
-			xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            app:datumRatio="datumWidth"
-            app:widthRatio="16.0"
-            app:heightRatio="9.0"
-            android:layout_height="wrap_content">
+<net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:datumRatio="datumWidth"
+    app:widthRatio="16.0"
+    app:heightRatio="9.0"
+    android:layout_height="wrap_content">
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioImageView
-                android:id="@+id/image2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:datumRatio="datumWidth"
-                app:widthRatio="16.0"
-                app:heightRatio="7.0"
-                android:scaleType="centerCrop"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:datumRatio="datumWidth"
+        app:widthRatio="16.0"
+        app:heightRatio="7.0"
+        android:scaleType="centerCrop"/>
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                app:datumRatio="datumWidth"
-                app:widthRatio="16.0"
-                android:background="@color/sample_text"
-                app:heightRatio="7.0"
-                android:text="RatioImageView/RatioTextView:16*7"
-                android:textColor="@android:color/white"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:datumRatio="datumWidth"
+        app:widthRatio="16.0"
+        android:background="@color/sample_text"
+        app:heightRatio="7.0"
+        android:text="RatioImageView/RatioTextView:16*7"
+        android:textColor="@android:color/white"/>
 
-        </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
-        
-        <LinearLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+</net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/sample_primary"
-                android:gravity="center"
-                android:text="Square"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:isSquare="true"/>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal">
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                app:heightRatio="1"
-                app:widthRatio="1"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/sample_primary"
+        android:gravity="center"
+        android:text="Square"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:isSquare="true"/>
 
-            <net.soulwolf.widget.ratiolayout.widget.RatioTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/sample_primary"
-                android:gravity="center"
-                android:text="AspectRatio:1.0"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:aspectRatio="1"/>
+    <net.soulwolf.widget.ratiolayout.widget.RatioView
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        app:heightRatio="1"
+        app:widthRatio="1"/>
 
-        </LinearLayout>
+    <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/sample_primary"
+        android:gravity="center"
+        android:text="AspectRatio:1.0"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:aspectRatio="1"/>
 
-		<net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
-			xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            app:datumRatio="datumWidth"
-            app:widthRatio="15.0"
-            app:layout_marginTop="8dp"
-            app:heightRatio="10.0"
-            app:layout_height="wrap_content"/>
+</LinearLayout>
+
+<net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:datumRatio="datumWidth"
+    app:widthRatio="15.0"
+    app:layout_marginTop="8dp"
+    app:heightRatio="10.0"
+    app:layout_height="wrap_content"/>
 		
 ```
 ## Android-RatioLayout with java code
 ```java
-	RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
-	ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
-	ratioFrameLayout.setSquare(square);
-	ratioFrameLayout.setAspectRatio(aspectRatio);
+RatioFrameLayout ratioFrameLayout = new RatioFrameLayout(context);
+ratioFrameLayout.setRatio(datumRatio,widthRatio,heightRatio);
+ratioFrameLayout.setSquare(square);
+ratioFrameLayout.setAspectRatio(aspectRatio);
 ```
 
 ## Attr params  info
@@ -159,62 +159,62 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
 
 ## Custom
 ```java
-	public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegate {
-    
-        private RatioLayoutDelegate mRatioLayoutDelegate;
-    
-    
-        public RatioFrameLayout(Context context) {
-            super(context);
+public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegate {
+
+    private RatioLayoutDelegate mRatioLayoutDelegate;
+
+
+    public RatioFrameLayout(Context context) {
+        super(context);
+    }
+
+    public RatioFrameLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs);
+    }
+
+    public RatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs, defStyleAttr);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public RatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs, defStyleAttr, defStyleRes);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.update(widthMeasureSpec, heightMeasureSpec);
+            widthMeasureSpec = mRatioLayoutDelegate.getWidthMeasureSpec();
+            heightMeasureSpec = mRatioLayoutDelegate.getHeightMeasureSpec();
         }
-    
-        public RatioFrameLayout(Context context, AttributeSet attrs) {
-            super(context, attrs);
-            mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs);
-        }
-    
-        public RatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-            super(context, attrs, defStyleAttr);
-            mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs, defStyleAttr);
-        }
-    
-        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-        public RatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-            super(context, attrs, defStyleAttr, defStyleRes);
-            mRatioLayoutDelegate = RatioLayoutDelegate.obtain(this, attrs, defStyleAttr, defStyleRes);
-        }
-    
-        @Override
-        protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            if (mRatioLayoutDelegate != null) {
-                mRatioLayoutDelegate.update(widthMeasureSpec, heightMeasureSpec);
-                widthMeasureSpec = mRatioLayoutDelegate.getWidthMeasureSpec();
-                heightMeasureSpec = mRatioLayoutDelegate.getHeightMeasureSpec();
-            }
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        }
-    
-        @Override
-        public void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
-            if (mRatioLayoutDelegate != null) {
-                mRatioLayoutDelegate.setRatio(mode, datumWidth, datumHeight);
-            }
-        }
-    
-        @Override
-        public void setSquare(boolean square) {
-            if (mRatioLayoutDelegate != null) {
-                mRatioLayoutDelegate.setSquare(square);
-            }
-        }
-    
-        @Override
-        public void setAspectRatio(float aspectRatio) {
-            if (mRatioLayoutDelegate != null) {
-                mRatioLayoutDelegate.setAspectRatio(aspectRatio);
-            }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    public void setRatio(RatioDatumMode mode, float datumWidth, float datumHeight) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setRatio(mode, datumWidth, datumHeight);
         }
     }
+
+    @Override
+    public void setSquare(boolean square) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setSquare(square);
+        }
+    }
+
+    @Override
+    public void setAspectRatio(float aspectRatio) {
+        if (mRatioLayoutDelegate != null) {
+            mRatioLayoutDelegate.setAspectRatio(aspectRatio);
+        }
+    }
+}
 ```
 
 ## Maven
