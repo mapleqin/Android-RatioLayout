@@ -1,6 +1,5 @@
-/**
+/*
  * <pre>
- * Copyright 2015 Soulwolf Ching
  * Copyright 2015 The Android Open Source Project for Android-RatioLayout
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +25,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * author: Soulwolf Created on 2015/8/8 0:43.
- * email : Ching.Soulwolf@gmail.com
+ * author: Amphiaraus
+ * since : 2017/9/13 上午10:39.
  */
 class SpaceWrapper extends View {
     /**

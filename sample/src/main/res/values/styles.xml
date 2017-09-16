@@ -1,20 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!--状态栏颜色-->
         <item name="colorPrimaryDark">@color/sample_primary</item>
         <!--Toolbar颜色-->
         <item name="colorPrimary">@color/sample_primary</item>
-        <!--返回键样式-->
-        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
-        <!--底部导航颜色-->
-        <item name="android:navigationBarColor">@color/sample_primary</item>
-        <item name="android:windowTranslucentNavigation" >true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
-    <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">@android:color/white</item>
     </style>
 
 </resources>

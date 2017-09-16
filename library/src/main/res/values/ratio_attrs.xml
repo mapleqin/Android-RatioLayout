@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Defined base ratio size custom attrs -->
+    <declare-styleable name="ViewSizeCalculate">
+        <!-- Sets view ratio size of width -->
+        <attr name="widthRatio" format="float"/>
+        <!-- Sets view ratio size of height -->
+        <attr name="heightRatio" format="float"/>
+        <!-- Sets view ratio size of square -->
+        <attr name="isSquare" format="boolean"/>
+        <!-- Sets view ratio size of aspect -->
+        <attr name="aspectRatio" format="float"/>
+        <!-- Sets view ratio size of mode -->
+        <attr name="datumRatio">
+            <enum name="datumAuto" value="0"/>
+            <enum name="datumWidth" value="1"/>
+            <enum name="datumHeight" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- RatioFrameLayout -->
+    <declare-styleable name="RatioFrameLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioAbsoluteLayout -->
+    <declare-styleable name="RatioAbsoluteLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioButton -->
+    <declare-styleable name="RatioButton" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioCheckBox -->
+    <declare-styleable name="RatioCheckBox" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioCheckedTextView -->
+    <declare-styleable name="RatioCheckedTextView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioEditText -->
+    <declare-styleable name="RatioEditText" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioGridLayout -->
+    <declare-styleable name="RatioGridLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioImageButton -->
+    <declare-styleable name="RatioImageButton" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioImageView -->
+    <declare-styleable name="RatioImageView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioLinearLayout -->
+    <declare-styleable name="RatioLinearLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioProgressBar -->
+    <declare-styleable name="RatioProgressBar" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioRadioButton -->
+    <declare-styleable name="RatioRadioButton" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioRadioGroup -->
+    <declare-styleable name="RatioRadioGroup" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioRelativeLayout -->
+    <declare-styleable name="RatioRelativeLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioSpace -->
+    <declare-styleable name="RatioSpace" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioTableLayout -->
+    <declare-styleable name="RatioTableLayout" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioTextView -->
+    <declare-styleable name="RatioTextView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioView -->
+    <declare-styleable name="RatioView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioCardView -->
+    <declare-styleable name="RatioCardView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioGridView -->
+    <declare-styleable name="RatioGridView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioListView -->
+    <declare-styleable name="RatioListView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+
+    <!-- RatioRecyclerView -->
+    <declare-styleable name="RatioRecyclerView" parent="ViewSizeCalculate">
+        <attr name="widthRatio"/>
+        <attr name="heightRatio"/>
+        <attr name="datumRatio"/>
+        <attr name="isSquare"/>
+        <attr name="aspectRatio"/>
+    </declare-styleable>
+</resources>
