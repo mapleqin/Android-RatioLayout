@@ -37,9 +37,8 @@ public final class RatioLayoutDelegate<TARGET extends View & RatioMeasureDelegat
         return obtain(target, attrs, 0, 0);
     }
 
-    @SuppressWarnings("unchecked")
     public static <TARGET extends View & RatioMeasureDelegate> RatioLayoutDelegate obtain(TARGET target, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        return new RatioLayoutDelegate(target, attrs, defStyleAttr, defStyleRes);
+        return new RatioLayoutDelegate<>(target, attrs, defStyleAttr, defStyleRes);
     }
 
     private final TARGET mRatioTarget;
@@ -58,8 +57,8 @@ public final class RatioLayoutDelegate<TARGET extends View & RatioMeasureDelegat
         mRatioDatumMode = RatioDatumMode.valueOf(a.getInt(R.styleable.ViewSizeCalculate_datumRatio, 0));
         mDatumWidth = a.getFloat(R.styleable.ViewSizeCalculate_widthRatio, mDatumWidth);
         mDatumHeight = a.getFloat(R.styleable.ViewSizeCalculate_heightRatio, mDatumHeight);
-        mIsSquare = a.getBoolean(R.styleable.ViewSizeCalculate_isSquare, false);
-        mAspectRatio = a.getFloat(R.styleable.ViewSizeCalculate_aspectRatio, mAspectRatio);
+        mIsSquare = a.getBoolean(R.styleable.ViewSizeCalculate_layoutSquare, false);
+        mAspectRatio = a.getFloat(R.styleable.ViewSizeCalculate_layoutAspectRatio, mAspectRatio);
         a.recycle();
     }
 

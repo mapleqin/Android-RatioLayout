@@ -74,7 +74,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:isSquare="true"/>
+                app:layoutSquare="true"/>
 
             <net.soulwolf.widget.ratiolayout.widget.RatioView
                 android:layout_width="15dp"
@@ -92,7 +92,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:aspectRatio="1"/>
+                app:layoutAspectRatio="1"/>
 
         </LinearLayout>
 

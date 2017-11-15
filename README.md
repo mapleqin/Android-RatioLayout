@@ -60,7 +60,7 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:isSquare="true"/>
+        app:layoutSquare="true"/>
 
     <net.soulwolf.widget.ratiolayout.widget.RatioView
         android:layout_width="15dp"
@@ -78,7 +78,7 @@ For more information please see <a href='http://amphiaraus.org/Android-RatioLayo
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:aspectRatio="1"/>
+        app:layoutAspectRatio="1"/>
 
 </LinearLayout>
 
@@ -121,11 +121,11 @@ ratioFrameLayout.setAspectRatio(aspectRatio);
 			<td>This parameter indicates the proportion of the size Height</td>
 		</tr>
 		<tr>
-            <td>isSquare</td>
+            <td>layoutSquare</td>
             <td>This parameter indicates the proportion of the square</td>
         </tr>
         <tr>
-            <td>aspectRatio</td>
+            <td>layoutAspectRatio</td>
             <td>This parameter indicates the proportion of the (width / height)</td>
         </tr>
 	</tbody>
