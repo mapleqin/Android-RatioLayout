@@ -221,7 +221,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegat
 	<dependency>
       <groupId>net.soulwolf.widget</groupId>
       <artifactId>ratiolayout</artifactId>
-      <version>2.0.0</version>
+      <version>2.1.0</version>
       <type>pom</type>
     </dependency>
 ## Gradle
@@ -231,7 +231,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegat
        }
 	}
 	
-	compile 'net.soulwolf.widget:ratiolayout:2.0.0'
+	compile 'net.soulwolf.widget:ratiolayout:2.1.0'
 
 ## Developed by
   Amphiaraus - <a href='javascript:'>amphiarause@gmail.com</a>
