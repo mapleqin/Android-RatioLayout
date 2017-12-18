@@ -236,9 +236,6 @@ public class RatioFrameLayout extends FrameLayout implements RatioMeasureDelegat
 ## Developed by
   Amphiaraus - <a href='javascript:'>amphiarause@gmail.com</a>
 
-## Author other library 
-  <a href='https://github.com/amphiaraus/RoundedLayout'>RoundedLayout</a> - A Layout that handles the filery of a View
-
 ## License
 	Copyright 2015 The Android Open Source Project for Android-RatioLayout
 	
