@@ -135,6 +135,27 @@
                 android:textStyle="bold"/>
 
         </net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout>
+
+        <net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            app:datumRatio="datumHeight"
+            app:heightRatio="9.0"
+            app:widthRatio="16.0">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/sample_primary"
+                android:gravity="center"
+                android:text="RatioDatumHeight::16*9"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </net.soulwolf.widget.ratiolayout.widget.RatioRelativeLayout>
     </LinearLayout>
 
 </ScrollView>
